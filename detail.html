@@ -1,0 +1,16 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ destination.name }}</title>
+</head>
+<body>
+    <h1>{{ destination.name }}</h1>
+    <img src="{{ url_for('static', filename='images/' + destination.image) }}" width="400">
+    <p>{{ destination.country }}</p>
+    <p>⭐ {{ destination.rating }} ({{ destination.reviews }})</p>
+    <p>{{ destination.description }}</p>
+    <p><strong>{{ destination.price }}</strong></p>
+    <button>Book Now</button>
+</body>
+</html>

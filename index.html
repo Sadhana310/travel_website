@@ -1,0 +1,23 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Travel Booking</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1 style="text-align:center;">Explore Destinations</h1>
+    <div class="destinations">
+        {% for d in destinations %}
+        <div class="card">
+            <img src="{{ url_for('static', filename='images/' + d.image) }}">
+            <h2>{{ d.name }}</h2>
+            <p>{{ d.country }}</p>
+            <p>⭐ {{ d.rating }} ({{ d.reviews }})</p>
+            <p><strong>{{ d.price }}</strong></p>
+            <a href="/destination/{{ d.id }}">View Details</a>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
